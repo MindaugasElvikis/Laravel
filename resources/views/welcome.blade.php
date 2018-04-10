@@ -88,6 +88,7 @@
                     <a href="https://laravel-news.com">News</a>
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('welcome.admin', ['id' => 4, 'textas' => 'aaaaaa']) }}">Welcome page</a>
                 </div>
             </div>
         </div>

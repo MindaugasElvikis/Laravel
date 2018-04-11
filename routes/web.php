@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/{user}', function ($user) {
+    dd($user);
     return view('welcome');
 });

@@ -28,7 +28,9 @@ class RouteServiceProvider extends ServiceProvider
 
         parent::boot();
 
-        Route::model('user', User::class);
+        Route::bind('user', function ($id) {
+            return User::where('id', $id)->where('name', 'Mindaugas Elvikis')->first() ?? abort(404);
+        });
     }
 
     /**

@@ -20,11 +20,19 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
+                        @alert()
+                            @slot('title')
+                                test
+                            @endslot
+                            dwqdqwd
+                        @endalert
                         <table id="example2" class="table table-bordered table-hover dataTable" role="grid"
                                aria-describedby="example2_info">
                             <thead>
                             <tr role="row">
                                 <th>#</th>
+                                <th>Categories</th>
+                                <th>User</th>
                                 <th>Title</th>
                                 <th>Slug</th>
                                 <th>Comments Count</th>
@@ -35,9 +43,11 @@
                             @foreach($posts as $post)
                                 <tr role="row" class="odd">
                                     <td>{{ $post->id }}</td>
+                                    <td>{{ implode(', ', $post->categories()->pluck('name')->toArray()) }}</td>
+                                    <td>{{ $post->user->name }}</td>
                                     <td>{{ $post->title }}</td>
                                     <td>{{ $post->slug }}</td>
-                                    <td>{{ $post->user->name }}</td>
+                                    <td>{{ $post->comments->count() }}</td>
                                 </tr>
                             @endforeach
                         </table>

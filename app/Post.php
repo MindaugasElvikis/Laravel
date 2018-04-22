@@ -15,4 +15,16 @@ class Post extends Model
         'slug',
         'content'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class)->withDefault([
+            'name' => 'Guest'
+        ]);
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }

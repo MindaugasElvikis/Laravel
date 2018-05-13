@@ -116,10 +116,13 @@ return [
         ],
         [
             'text'        => 'Posts',
-            'url'         => 'admin/posts',
+            'route'       => 'admin.posts.index',
             'icon'        => 'file',
-            'label'       => 4,
-            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Users',
+            'route'       => 'admin.users.index',
+            'icon'        => 'file',
         ],
         'ACCOUNT SETTINGS',
         [

@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id',
+        'name', 'email', 'password', 'role_id', 'image_id',
     ];
 
     /**
@@ -26,6 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $with = ['posts'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -49,5 +51,12 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+    public function image()
+    {
+        return $this->belongsTo(Image::class)->withDefault([
+            'path' => 'images/default.jpeg'
+        ]);
     }
 }

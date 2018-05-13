@@ -14,7 +14,7 @@
 ][config('adminlte.layout')] : '') . (config('adminlte.collapse_sidebar') ? ' sidebar-collapse ' : ''))
 
 @section('body')
-    <div class="wrapper">
+    <div id="app" class="wrapper">
 
         <!-- Main Header -->
         <header class="main-header">

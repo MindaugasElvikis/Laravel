@@ -7,6 +7,8 @@
 @yield('title', config('adminlte.title', 'AdminLTE 2'))
 @yield('title_postfix', config('adminlte.title_postfix', ''))</title>
     <!-- Tell the browser to be responsive to screen width -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -59,8 +61,12 @@
 @if(config('adminlte.plugins.chartjs'))
     <!-- ChartJS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+
 @endif
 
+<script src="/js/manifest.js"></script>
+<script src="/js/vendor.js"></script>
+<script src="/js/app.js"></script>
 @yield('adminlte_js')
 
 </body>

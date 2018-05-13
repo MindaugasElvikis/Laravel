@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 //Route::redirect('/', '/home');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(['auth'])->get('/home', 'HomeController@index')->name('home');
 
 /** Admin groupsas */
 Route::namespace('Admin')->middleware(['auth'])->prefix('/admin')->as('admin.')->group(function () {

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/aaa', function () {
-    return \App\User::find(1);
+Route::middleware('auth:api')->group(function () {
+    Route::get('/messages/with/{user}', 'Api\\MessagesController@listMessages');
+    Route::post('/messages/to/{receiver}', 'Api\\MessagesController@createMessage');
+    Route::get('/me', 'Api\\UsersController@me');
+    Route::get('/users', 'Api\\UsersController@listUsers');
 });
+

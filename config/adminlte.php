@@ -124,6 +124,11 @@ return [
             'route'       => 'admin.users.index',
             'icon'        => 'file',
         ],
+        [
+            'text'        => 'Messaging',
+            'route'       => 'messaging.index',
+            'icon'        => 'file',
+        ],
         'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',

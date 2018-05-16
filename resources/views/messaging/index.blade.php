@@ -3,9 +3,10 @@
 @section('title', 'AdminLTE')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Messaging</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    <p>Here you can send messages to other people</p>
+    <messages></messages>
 @stop

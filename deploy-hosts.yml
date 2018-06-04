@@ -1,0 +1,6 @@
+209.97.140.68:
+  user: root
+  identityFile: _files/ssh/ssh.pem
+  stage: test
+  deploy_path: '/var/www/bta.elvikis.lt'
+

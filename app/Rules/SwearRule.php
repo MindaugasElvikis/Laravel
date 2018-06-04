@@ -26,7 +26,6 @@ class SwearRule implements Rule
             array_map('strtolower', self::SWEARS),
             true
         );
-
     }
 
     /**
